@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.JAPAN">
+	<select id="selectJapanList" resultType="map">
+		select * from japan
+	</select>
+	<select id="selectJapan" resultType="map">
+		select * from japan
+		whare
+		jpnum = #{jpnum}
+	</select>
+	<insert id="insertJapan">
+		insert into(jpdesc, jpname)
+		values(#{jpdesc},#{jpname})
+	</insert>
+	<update id="updateJapan">
+		update japan
+		set jpdesc=#{jpdesc},
+		jpname=#{jpname}
+		where
+		jpnum=#{jpnum}
+	</update>
+	<delete id="deleteJapan">
+		delete from japan
+		where jpnum=#{jpnum}
+	</delete>
+	
+</mapper>
